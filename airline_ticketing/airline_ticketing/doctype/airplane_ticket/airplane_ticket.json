@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{flight}-{source_airport_code}-{destination_airport_code}",
+ "autoname": "format:{flight}-{source_airport_code}-to-{destination_airport_code}-{###}",
  "creation": "2024-05-01 08:21:10.241729",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -14,6 +14,8 @@
   "flight",
   "destination_airport",
   "destination_airport_code",
+  "ticket_status_section",
+  "status",
   "departure_details_section",
   "departure_date",
   "departure_time",
@@ -48,12 +50,14 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Source Airport Code",
+   "read_only": 1,
    "reqd": 1
   },
   {
    "fieldname": "departure_date",
    "fieldtype": "Date",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Departure Date",
    "reqd": 1
   },
@@ -77,6 +81,7 @@
   {
    "fieldname": "destination_airport",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Destination Airport",
    "options": "Airport",
    "reqd": 1
@@ -85,6 +90,7 @@
    "fetch_from": "destination_airport.code",
    "fieldname": "destination_airport_code",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Destination Airport Code",
    "read_only": 1,
    "reqd": 1
@@ -105,6 +111,20 @@
    "fieldtype": "Column Break"
   },
   {
+   "fieldname": "ticket_status_section",
+   "fieldtype": "Section Break",
+   "label": "Ticket Status"
+  },
+  {
+   "default": "Booked",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Booked\nChecked-In\nBoarded",
+   "reqd": 1
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -118,7 +138,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-01 09:19:41.200278",
+ "modified": "2024-05-01 11:21:40.714215",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Airplane Ticket",
@@ -139,9 +159,21 @@
    "write": 1
   }
  ],
- "search_fields": "departure_date",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Booked"
+  },
+  {
+   "color": "Purple",
+   "title": "Checked-In"
+  },
+  {
+   "color": "Green",
+   "title": "Boarded"
+  }
+ ],
  "track_changes": 1
 }
