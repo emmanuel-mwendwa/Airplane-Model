@@ -6,6 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "first_name",
+  "full_name",
+  "column_break_uegw",
   "last_name",
   "date_of_birth"
  ],
@@ -26,6 +28,16 @@
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
    "label": "Date Of Birth"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_uegw",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -35,7 +47,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2024-05-01 11:35:51.816100",
+ "modified": "2024-07-12 09:22:01.417286",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Flight Passenger",
