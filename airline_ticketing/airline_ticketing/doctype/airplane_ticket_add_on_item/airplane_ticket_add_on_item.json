@@ -27,13 +27,14 @@
    "default": "0",
    "fieldname": "amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Amount"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-12 10:00:08.017281",
+ "modified": "2024-07-12 10:02:44.254322",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Airplane Ticket Add-on Item",
