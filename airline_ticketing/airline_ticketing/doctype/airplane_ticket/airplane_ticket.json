@@ -8,26 +8,25 @@
  "field_order": [
   "section_break_m1hl",
   "passenger",
-  "source_airport",
+  "status",
   "source_airport_code",
   "column_break_uujy",
   "flight",
-  "destination_airport",
+  "seat",
   "destination_airport_code",
-  "ticket_status_section",
-  "status",
-  "departure_details_section",
-  "departure_date",
-  "departure_time",
-  "column_break_caeu",
-  "duration_of_flight",
-  "amended_from",
   "section_break_mxmi",
   "add_ons",
   "section_break_hxdy",
   "flight_price",
   "column_break_yvvh",
-  "total_amount"
+  "total_amount",
+  "departure_details_section",
+  "departure_date",
+  "departure_time",
+  "check_if_time_is_fetched",
+  "column_break_caeu",
+  "duration_of_flight",
+  "amended_from"
  ],
  "fields": [
   {
@@ -40,15 +39,8 @@
    "in_list_view": 1,
    "label": "Passenger",
    "options": "Flight Passenger",
-   "reqd": 1
-  },
-  {
-   "fieldname": "source_airport",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Source Airport",
-   "options": "Airport",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fetch_from": "source_airport.code",
@@ -60,6 +52,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "flight.date_of_departure",
    "fieldname": "departure_date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -68,6 +61,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "flight.duration",
    "fieldname": "duration_of_flight",
    "fieldtype": "Duration",
    "label": "Duration of Flight",
@@ -81,16 +75,9 @@
    "fieldname": "flight",
    "fieldtype": "Link",
    "label": "Flight",
-   "options": "Airplane",
-   "reqd": 1
-  },
-  {
-   "fieldname": "destination_airport",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Destination Airport",
-   "options": "Airport",
-   "reqd": 1
+   "options": "Airplane Flight",
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fetch_from": "destination_airport.code",
@@ -102,6 +89,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "flight.time_of_departure",
    "fieldname": "departure_time",
    "fieldtype": "Time",
    "label": "Departure Time",
@@ -115,11 +103,6 @@
   {
    "fieldname": "column_break_caeu",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "ticket_status_section",
-   "fieldtype": "Section Break",
-   "label": "Ticket Status"
   },
   {
    "default": "Booked",
@@ -169,12 +152,24 @@
    "fieldname": "total_amount",
    "fieldtype": "Currency",
    "label": "Total Amount"
+  },
+  {
+   "fieldname": "seat",
+   "fieldtype": "Data",
+   "label": "Seat"
+  },
+  {
+   "fetch_from": "flight.date_of_departure",
+   "fieldname": "check_if_time_is_fetched",
+   "fieldtype": "Date",
+   "label": "Check if Time is Fetched",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-12 10:04:17.896770",
+ "modified": "2024-07-12 12:11:23.158172",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Airplane Ticket",

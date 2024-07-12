@@ -39,3 +39,9 @@ class AirplaneTicket(Document):
                     alert=True
                 )
         self.add_ons = unique_add_ons
+
+    def before_submit(self):
+
+        if self.status != "Boarded":
+
+            frappe.throw(_("Ticket must be in Boarded status to be submitted."))
