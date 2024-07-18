@@ -5,12 +5,15 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 
+import random
+
 class AirplaneTicket(Document):
     
     def validate(self):
 
         self.remove_duplicate_add_ons()
         self.calculate_total_amount()
+
         
     def calculate_total_amount(self):
 
@@ -40,7 +43,17 @@ class AirplaneTicket(Document):
                 )
         self.add_ons = unique_add_ons
 
+    def random_seat(self):
+
+        seat_num = random.randint(1, 100)
+
+        seat_letter = random.choice(["A", "B", "C", "D", "E"])
+
+        return f"{seat_num}{seat_letter}"
+
     def before_submit(self):
+
+        self.seat = self.random_seat()
 
         if self.status != "Boarded":
 

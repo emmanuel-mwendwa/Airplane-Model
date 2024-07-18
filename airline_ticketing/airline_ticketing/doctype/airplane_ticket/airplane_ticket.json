@@ -23,7 +23,6 @@
   "departure_details_section",
   "departure_date",
   "departure_time",
-  "check_if_time_is_fetched",
   "column_break_caeu",
   "duration_of_flight",
   "amended_from"
@@ -43,7 +42,7 @@
    "search_index": 1
   },
   {
-   "fetch_from": "source_airport.code",
+   "fetch_from": "flight.source_airport_code",
    "fieldname": "source_airport_code",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -80,7 +79,7 @@
    "search_index": 1
   },
   {
-   "fetch_from": "destination_airport.code",
+   "fetch_from": "flight.destination_airport_code",
    "fieldname": "destination_airport_code",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -156,20 +155,14 @@
   {
    "fieldname": "seat",
    "fieldtype": "Data",
-   "label": "Seat"
-  },
-  {
-   "fetch_from": "flight.date_of_departure",
-   "fieldname": "check_if_time_is_fetched",
-   "fieldtype": "Date",
-   "label": "Check if Time is Fetched",
-   "reqd": 1
+   "label": "Seat",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-12 12:11:23.158172",
+ "modified": "2024-07-18 11:17:42.322080",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Airplane Ticket",
