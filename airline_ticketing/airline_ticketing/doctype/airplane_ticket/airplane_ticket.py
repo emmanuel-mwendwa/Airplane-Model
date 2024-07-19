@@ -17,7 +17,7 @@ class AirplaneTicket(Document):
         
     def calculate_total_amount(self):
 
-        self.total_amount = self.flight_price
+        self.total_amount = float(self.flight_price)
 
         if self.add_ons:
             for add_on in self.add_ons:
