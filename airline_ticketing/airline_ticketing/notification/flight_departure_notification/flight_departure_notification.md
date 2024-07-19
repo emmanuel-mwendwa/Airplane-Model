@@ -1,0 +1,1 @@
+<h3>Flight {{ doc.name }} departs in 24 hours</h3>

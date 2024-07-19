@@ -1,0 +1,32 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.status==\"Scheduled\"",
+ "creation": "2024-07-19 06:28:57.190157",
+ "date_changed": "date_of_departure",
+ "days_in_advance": 1,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Airplane Flight",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<h3>Flight {{ doc.name }} departs in 24 hours</h3>",
+ "message_type": "Markdown",
+ "modified": "2024-07-19 06:28:57.190157",
+ "modified_by": "Administrator",
+ "module": "Airline Ticketing",
+ "name": "Flight Departure Notification",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "System Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "sender": "Emmanuel Mwendwa",
+ "sender_email": "mwendwa@navari.co.ke",
+ "subject": "Departs in 24 hours"
+}

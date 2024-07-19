@@ -19,7 +19,7 @@
  "list_columns": [],
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2024-07-19 05:55:49.848732",
+ "modified": "2024-07-19 06:31:58.986517",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "book-flight-ticket",
@@ -32,7 +32,7 @@
  "success_message": "You will receive the details in your email soon",
  "success_title": "Ticket Booked",
  "success_url": "",
- "title": "Book Flight Ticket",
+ "title": "Book Flight Ticket Web Form",
  "web_form_fields": [
   {
    "allow_read_on_all_link_options": 0,
