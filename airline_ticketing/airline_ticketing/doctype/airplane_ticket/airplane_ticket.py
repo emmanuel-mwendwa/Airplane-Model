@@ -13,6 +13,7 @@ class AirplaneTicket(Document):
 
         self.remove_duplicate_add_ons()
         self.calculate_total_amount()
+        self.seat = self.random_seat()
 
         
     def calculate_total_amount(self):
@@ -52,8 +53,6 @@ class AirplaneTicket(Document):
         return f"{seat_num}{seat_letter}"
 
     def before_submit(self):
-
-        self.seat = self.random_seat()
 
         if self.status != "Boarded":
 
