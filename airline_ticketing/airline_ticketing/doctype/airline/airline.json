@@ -6,9 +6,11 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "headquarters",
   "founding_year",
+  "column_break_vyvv",
   "customer_care_number",
-  "headquarters"
+  "website"
  ],
  "fields": [
   {
@@ -30,6 +32,16 @@
    "in_list_view": 1,
    "label": "Headquarters",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_vyvv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website",
+   "options": "URL"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -39,7 +51,7 @@
    "link_fieldname": "airline"
   }
  ],
- "modified": "2024-05-01 11:33:27.215449",
+ "modified": "2024-11-05 13:55:19.302493",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Airline",
