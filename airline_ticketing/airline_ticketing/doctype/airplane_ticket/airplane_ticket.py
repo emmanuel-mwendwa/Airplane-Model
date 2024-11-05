@@ -14,6 +14,7 @@ class AirplaneTicket(Document):
         self.remove_duplicate_add_ons()
         self.calculate_total_amount()
         self.seat = self.random_seat()
+        self.number_of_tickets()
 
         
     def calculate_total_amount(self):
@@ -51,6 +52,15 @@ class AirplaneTicket(Document):
         seat_letter = random.choice(["A", "B", "C", "D", "E"])
 
         return f"{seat_num}{seat_letter}"
+    
+    def number_of_tickets(self):
+
+        airplane_capacity = frappe.db.get_value("Airplane Flight", self.flight, "airplane.capacity")
+
+        existing_tickets_count = frappe.db.count("Airplane Ticket", filters={"flight": self.flight})
+
+        if existing_tickets_count >= airplane_capacity:
+            frappe.throw("The airplane has reached its seating capacity. Cannot create a new ticket.")
 
     def before_submit(self):
 
