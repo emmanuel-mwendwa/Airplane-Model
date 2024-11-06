@@ -24,4 +24,22 @@ frappe.ui.form.on("Airplane Ticket", {
             dialog.show();
         }, __("Actions"));
 	},
+
+    validate(frm) {
+        if (frm.is_new() && frm.doc.flight) {
+            frappe.call({
+                method: "airline_ticketing.airline_ticketing.doctype.airplane_ticket.airplane_ticket.check_capacity",
+                args: {
+                    flight: frm.doc.flight
+                },
+                async: false,
+                callback: function(r) {
+                    if (r.message) {
+                        frappe.msgprint(__(r.message));
+                        frappe.validated = false;
+                    }
+                }
+            });
+        }
+    }
 });
