@@ -75,11 +75,10 @@ def get_chart(data):
     return chart
 
 def get_summary(total_revenue):
-    formatted_revenue = fmt_money(total_revenue, currency="AED")
     return [
         {
             "label": _("Total Revenue"),
-            "value": formatted_revenue,
+            "value": total_revenue,
             "indicator": "Green",
         }
     ]
