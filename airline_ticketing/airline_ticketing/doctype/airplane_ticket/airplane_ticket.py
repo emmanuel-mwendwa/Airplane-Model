@@ -14,6 +14,7 @@ class AirplaneTicket(Document):
         self.remove_duplicate_add_ons()
         self.calculate_total_amount()
         self.seat = self.random_seat()
+        self.gate_number = self.random_gate_number()
 
         
     def calculate_total_amount(self):
@@ -51,6 +52,17 @@ class AirplaneTicket(Document):
         seat_letter = random.choice(["A", "B", "C", "D", "E"])
 
         return f"{seat_num}{seat_letter}"
+
+    def random_gate_number(self):
+
+        terminal_num = random.randint(1, 5)
+
+        terminal_letter = random.choice(["A", "B", "C"])
+
+        gate_num = random.randint(1, 5)
+
+        return f"{terminal_num}{terminal_letter}{gate_num}"
+
 
     def before_submit(self):
 

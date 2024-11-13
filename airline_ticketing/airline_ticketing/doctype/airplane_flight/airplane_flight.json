@@ -20,6 +20,8 @@
   "duration",
   "column_break_veyo",
   "time_of_departure",
+  "section_break_hfph",
+  "flight_crew",
   "section_break_620g",
   "amended_from",
   "tab_2_tab",
@@ -146,6 +148,17 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
+  },
+  {
+   "fieldname": "section_break_hfph",
+   "fieldtype": "Section Break",
+   "label": "Crew"
+  },
+  {
+   "fieldname": "flight_crew",
+   "fieldtype": "Table",
+   "label": "Flight Crew",
+   "options": "Flight Crew Member"
   }
  ],
  "has_web_view": 1,
@@ -158,7 +171,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-11-06 16:05:30.726095",
+ "modified": "2024-11-14 02:02:15.784297",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Airplane Flight",
