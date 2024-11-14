@@ -133,7 +133,7 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
 # 	"all": [
 # 		"airline_ticketing.tasks.all"
 # 	],
@@ -146,10 +146,10 @@ app_license = "mit"
 # 	"weekly": [
 # 		"airline_ticketing.tasks.weekly"
 # 	],
-# 	"monthly": [
-# 		"airline_ticketing.tasks.monthly"
-# 	],
-# }
+	"monthly": [
+		"airline_ticketing.airport_shop_management.doctype.lease_contract.lease_contract.send_rent_reminders"
+	],
+}
 
 # Testing
 # -------
