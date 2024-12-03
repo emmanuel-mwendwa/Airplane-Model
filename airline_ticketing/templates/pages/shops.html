@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th>Airport</th>
+            <th>Shop Number</th>
+            <th>Shop Name</th>
+            <th>Area (sq. ft.)</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for shop in shops %}
+        <tr>
+            <td>{{ shop.airport }}</td>
+            <td>{{ shop.number }}</td>
+            <td>{{ shop.name }}</td>
+            <td>{{ shop.area }}</td>
+            <td>{{ shop.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

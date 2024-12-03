@@ -37,5 +37,11 @@ def send_rent_reminders():
 
 		if tenant_email:
 			subject = "Rent Due Reminder"
-			message = f"Dear {lease_doc.tenant_email}, your rent is due for Shop {lease_doc.shop_name}. Rent amount {lease_doc.rent_amount}"
+			message = f"""
+			    Dear {lease_doc.tenant_email},<br><br>
+				Your rent is due for Shop {lease_doc.shop_name}.  <br>
+				Please pay {lease_doc.rent_amount} promptly. <br><br>
+				Regards,<br>
+				Airport Management.
+			"""
 			frappe.sendmail(recipients=[tenant_email], subject=subject, message=message)

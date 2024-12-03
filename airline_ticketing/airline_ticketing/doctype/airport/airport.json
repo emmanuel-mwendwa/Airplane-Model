@@ -6,8 +6,10 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "details_section",
   "code",
   "city",
+  "column_break_xovb",
   "country"
  ],
  "fields": [
@@ -31,6 +33,15 @@
    "in_list_view": 1,
    "label": "Country",
    "reqd": 1
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "column_break_xovb",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -40,7 +51,7 @@
    "link_fieldname": "Airport"
   }
  ],
- "modified": "2024-11-14 03:34:45.672178",
+ "modified": "2024-12-03 20:09:52.657109",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Airport",
