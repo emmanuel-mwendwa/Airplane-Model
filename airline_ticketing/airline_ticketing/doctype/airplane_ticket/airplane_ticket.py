@@ -14,7 +14,6 @@ class AirplaneTicket(Document):
         self.remove_duplicate_add_ons()
         self.calculate_total_amount()
         self.seat = self.random_seat()
-        self.gate_number = self.random_gate_number()
 
         
     def calculate_total_amount(self):
@@ -53,16 +52,6 @@ class AirplaneTicket(Document):
 
         return f"{seat_num}{seat_letter}"
 
-    def random_gate_number(self):
-
-        terminal_num = random.randint(1, 5)
-
-        terminal_letter = random.choice(["A", "B", "C"])
-
-        gate_num = random.randint(1, 5)
-
-        return f"{terminal_num}{terminal_letter}{gate_num}"
-
 
     def before_submit(self):
 
@@ -71,17 +60,17 @@ class AirplaneTicket(Document):
             frappe.throw(_("Ticket must be in Boarded status to be submitted."))
 
 
-@frappe.whitelist()
-def check_capacity(flight):
+    @frappe.whitelist()
+    def check_capacity(self, flight):
 
-    if not flight:
-        frappe.log_error("Flight is not specified")
+        if not flight:
+            frappe.log_error("Flight is not specified")
 
-    airplane_name = frappe.db.get_value("Airplane Flight", flight, "airplane")
-    
-    airplane_capacity = frappe.db.get_value("Airplane", airplane_name, "capacity")
-    
-    existing_tickets_count = frappe.db.count("Airplane Ticket", filters={"flight": flight, "docstatus": ["!=", 2]})
+        airplane_name = frappe.db.get_value("Airplane Flight", flight, "airplane")
+        
+        airplane_capacity = frappe.db.get_value("Airplane", airplane_name, "capacity")
+        
+        existing_tickets_count = frappe.db.count("Airplane Ticket", filters={"flight": flight, "docstatus": ["!=", 2]})
 
-    if existing_tickets_count >= airplane_capacity:
-        frappe.response["message"] = "The airplane has reached its seating capacity. Cannot create a new ticket."
+        if existing_tickets_count >= airplane_capacity:
+            frappe.response["message"] = "The airplane has reached its seating capacity. Cannot create a new ticket."

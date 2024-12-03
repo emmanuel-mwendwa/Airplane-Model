@@ -53,7 +53,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-14 02:45:06.788012",
+ "modified": "2024-11-18 18:30:30.305039",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Tenant",
@@ -75,5 +75,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "email"
 }

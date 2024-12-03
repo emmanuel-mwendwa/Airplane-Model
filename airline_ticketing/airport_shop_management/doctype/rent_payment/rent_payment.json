@@ -6,9 +6,11 @@
  "engine": "InnoDB",
  "field_order": [
   "lease",
+  "tenant_name",
   "payment_date",
   "column_break_chkp",
   "amount",
+  "shop_name",
   "status",
   "section_break_gopx",
   "amended_from"
@@ -59,12 +61,28 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "\nPaid\nUnpaid"
+  },
+  {
+   "fetch_from": "lease.tenant_email",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name",
+   "options": "Tenant",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "lease.shop_name",
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "label": "Shop Name",
+   "options": "Shop",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-14 03:40:53.899255",
+ "modified": "2024-11-18 18:32:22.669776",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Rent Payment",

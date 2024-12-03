@@ -160,6 +160,7 @@
    "read_only": 1
   },
   {
+   "fetch_from": "flight.gate_number",
    "fieldname": "gate_number",
    "fieldtype": "Data",
    "label": "Gate Number",
@@ -169,7 +170,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-14 02:28:12.539961",
+ "modified": "2024-12-03 19:22:10.099223",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Airplane Ticket",

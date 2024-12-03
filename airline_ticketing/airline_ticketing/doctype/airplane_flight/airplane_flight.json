@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "airplane",
+  "gate_number",
   "column_break_yqfg",
   "status",
   "airport_details_section",
@@ -159,6 +160,11 @@
    "fieldtype": "Table",
    "label": "Flight Crew",
    "options": "Flight Crew Member"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "has_web_view": 1,
@@ -171,7 +177,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-11-14 02:02:15.784297",
+ "modified": "2024-12-03 19:34:58.176292",
  "modified_by": "Administrator",
  "module": "Airline Ticketing",
  "name": "Airplane Flight",

@@ -28,7 +28,8 @@ frappe.ui.form.on("Airplane Ticket", {
     validate(frm) {
         if (frm.is_new() && frm.doc.flight) {
             frappe.call({
-                method: "airline_ticketing.airline_ticketing.doctype.airplane_ticket.airplane_ticket.check_capacity",
+                method: "check_capacity",
+                doc: frm.doc,
                 args: {
                     flight: frm.doc.flight
                 },
