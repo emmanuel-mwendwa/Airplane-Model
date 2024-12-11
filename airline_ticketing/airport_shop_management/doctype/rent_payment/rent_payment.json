@@ -5,6 +5,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "airport",
+  "section_break_cfts",
   "lease",
   "tenant_name",
   "payment_date",
@@ -77,12 +79,23 @@
    "label": "Shop Name",
    "options": "Shop",
    "read_only": 1
+  },
+  {
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airport",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_cfts",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-18 18:32:22.669776",
+ "modified": "2024-12-11 18:08:09.660446",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Rent Payment",

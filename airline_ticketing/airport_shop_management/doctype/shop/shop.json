@@ -7,9 +7,11 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "airport_section",
+  "airport",
+  "section_break_adpa",
   "number",
   "area",
-  "airport",
   "type",
   "column_break_muto",
   "name1",
@@ -68,7 +70,8 @@
   },
   {
    "fieldname": "section_break_mhol",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Image"
   },
   {
    "fieldname": "image",
@@ -96,6 +99,16 @@
    "fieldtype": "Link",
    "label": "Type",
    "options": "Shop Type"
+  },
+  {
+   "fieldname": "section_break_adpa",
+   "fieldtype": "Section Break",
+   "label": "Shop Details"
+  },
+  {
+   "fieldname": "airport_section",
+   "fieldtype": "Section Break",
+   "label": "Airport"
   }
  ],
  "has_web_view": 1,
@@ -103,7 +116,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "is_published",
  "links": [],
- "modified": "2024-12-11 13:38:13.742121",
+ "modified": "2024-12-11 18:09:24.300342",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",
