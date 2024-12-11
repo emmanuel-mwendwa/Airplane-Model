@@ -10,6 +10,7 @@
   "number",
   "area",
   "airport",
+  "type",
   "column_break_muto",
   "name1",
   "status",
@@ -89,6 +90,12 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Type",
+   "options": "Shop Type"
   }
  ],
  "has_web_view": 1,
@@ -96,7 +103,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "is_published",
  "links": [],
- "modified": "2024-12-11 11:55:02.554779",
+ "modified": "2024-12-11 13:38:13.742121",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",
