@@ -1,0 +1,6 @@
+<div>
+    {% if doc.status == "Available" %}
+        <a href="/{{ doc.route |e }}">{{ (doc.title or doc.name) |e }}</a>
+        <p>{{ doc.status }}</p>
+    {% endif %}
+</div>

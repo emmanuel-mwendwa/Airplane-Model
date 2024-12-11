@@ -26,8 +26,10 @@ class AirplaneFlight(WebsiteGenerator):
 
         return f"{terminal_num}{terminal_letter}{gate_num}"
     
-    @frappe.whitelist()
-    def update_ticket_gate_numbers(self):
+    def on_update(self):
+
+        if not self.gate_number:
+            return
 
         tickets = frappe.get_all("Airplane Ticket", filters={"flight": self.name}, fields=["name", "gate_number"])
 
