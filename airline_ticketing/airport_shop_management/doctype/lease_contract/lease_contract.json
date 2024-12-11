@@ -131,8 +131,7 @@
    "depends_on": "eval: doc.airport",
    "fieldname": "section_break_lztb",
    "fieldtype": "Section Break",
-   "label": "Lease Details",
-   "mandatory_depends_on": "eval: doc.airport"
+   "label": "Lease Details"
   },
   {
    "fieldname": "airport_section",
@@ -141,8 +140,9 @@
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-12-11 18:12:29.631373",
+ "modified": "2024-12-11 18:29:25.558716",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Lease Contract",
@@ -164,5 +164,8 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }

@@ -8,7 +8,8 @@ frappe.ui.form.on("Lease Contract", {
             function() {
                 return {
                     filters: {
-                        airport: frm.doc.airport
+                        airport: frm.doc.airport,
+                        status: "Available"
                     }
                 };
             }
