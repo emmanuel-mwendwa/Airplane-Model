@@ -19,6 +19,7 @@ class LeaseContract(Document):
     def on_cancel(self):
 
         frappe.db.set_value("Shop", self.shop, "status", "Available")
+        self.status = "Cancelled"
 
     def set_rent_amount(self):
 
@@ -32,7 +33,7 @@ class LeaseContract(Document):
     
     def check_if_another_lease_exists(self):
 
-        active_leases = frappe.get_all("Lease Contract", filters={"status": "Active"})
+        active_leases = frappe.get_all("Lease Contract", filters={"status": "Active"}, fields=["name", "shop"])
 
         for active_lease in active_leases:
 

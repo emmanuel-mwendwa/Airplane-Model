@@ -141,8 +141,13 @@
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2024-12-11 18:29:25.558716",
+ "links": [
+  {
+   "link_doctype": "Rent Payment",
+   "link_fieldname": "Lease"
+  }
+ ],
+ "modified": "2024-12-11 18:57:12.363814",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Lease Contract",
