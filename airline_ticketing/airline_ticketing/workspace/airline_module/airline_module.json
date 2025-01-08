@@ -1,0 +1,72 @@
+{
+ "app": "frappe",
+ "charts": [],
+ "content": "[{\"id\":\"HUdlopMHDW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Airline</span>\",\"col\":12}},{\"id\":\"qBDBZtkjd2\",\"type\":\"card\",\"data\":{\"card_name\":\"Airport Links\",\"col\":4}}]",
+ "creation": "2024-12-19 07:56:05.589603",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "customer",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Airline Module",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airport Links",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airport",
+   "link_count": 0,
+   "link_to": "Airport",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airline",
+   "link_count": 0,
+   "link_to": "Airline",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Airplane",
+   "link_count": 0,
+   "link_to": "Airplane",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-12-22 13:11:26.052880",
+ "modified_by": "Administrator",
+ "module": "Airline Ticketing",
+ "name": "Airline Module",
+ "number_cards": [],
+ "owner": "mwendwa@navari.co.ke",
+ "parent_page": "Welcome Workspace",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 23.0,
+ "shortcuts": [],
+ "title": "Airline Module",
+ "type": "Workspace"
+}

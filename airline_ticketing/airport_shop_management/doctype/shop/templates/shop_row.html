@@ -1,6 +1,20 @@
-<div>
-    {% if doc.status == "Available" %}
-        <a href="/{{ doc.route |e }}">{{ (doc.title or doc.name) |e }}</a>
-        <p>{{ doc.status }}</p>
-    {% endif %}
+{% if doc.status == "Available" %}
+<div class="card mb-3 shadow-sm">
+    <div class="card-body d-flex align-items-center">
+        {% if doc.image %}
+            <img src="{{ doc.image | e }}" alt="Shop Image" class="img-thumbnail mr-3" style="width: 100px; height: 100px; object-fit: cover;">
+        {% endif %}
+        <div>
+            <h5 class="card-title">
+                <a href="/{{ doc.route | e }}" class="text-primary">{{ doc.title or doc.name | e }}</a>
+            </h5>
+            <p class="card-text mb-1">Status: <strong>{{ doc.status }}</strong></p>
+            <p class="card-text mb-1">Area: {{ doc.area | e }} sq. ft.</p>
+            <p class="card-text mb-1">Airport: {{ doc.airport | e }}</p>
+            {% if doc.type %}
+                <p class="card-text mb-1">Type: {{ doc.type | e }}</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
+{% endif %}

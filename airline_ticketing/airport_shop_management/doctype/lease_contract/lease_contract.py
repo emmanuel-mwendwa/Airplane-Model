@@ -9,11 +9,13 @@ class LeaseContract(Document):
     def validate(self):
 
         self.rent_amount = self.set_rent_amount()
+
+    def before_save(self):
+        
+        self.check_if_another_lease_exists()
         
     def before_submit(self):
 
-        self.check_if_another_lease_exists()
-        
         frappe.db.set_value("Shop", self.shop, "status", "Occupied")
 
     def on_cancel(self):
@@ -33,13 +35,14 @@ class LeaseContract(Document):
     
     def check_if_another_lease_exists(self):
 
-        active_leases = frappe.get_all("Lease Contract", filters={"status": "Active"}, fields=["name", "shop"])
+        active_leases = frappe.get_all(
+            "Lease Contract", 
+            filters={"status": "Active", "shop": self.shop}, 
+            fields=["name", "shop"]
+        )
 
-        for active_lease in active_leases:
-
-            if active_lease.shop == self.shop:
-            
-                frappe.throw("There is already an active lease for this shop")
+        if active_leases:
+            frappe.throw(f"Shop {self.shop} is already leased by {active_leases[0].name}")
 
 
 @frappe.whitelist()
